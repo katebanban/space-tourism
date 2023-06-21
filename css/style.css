@@ -1,0 +1,754 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: "sf-pro-display";
+	src: url("../fonts/SF-Pro-Display-Regular.woff2") format("woff2"),
+		url("../fonts/SF-Pro-Display-Regular.woff") format("woff");
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "sf-pro-display";
+	src: url("../fonts/SF-Pro-Display-Bold.woff2") format("woff2"),
+		url("../fonts/SF-Pro-Display-Bold.woff") format("woff");
+	font-style: normal;
+	font-weight: bold;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "spaceagecyrillic";
+	src: url("../fonts/spaceagecyrillic-regular.woff2") format("woff2"),
+		url("../fonts/spaceagecyrillic-regular.woff") format("woff");
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	color: inherit;
+	font-family: "sf-pro-display";
+}
+
+body {
+	font-family: "sf-pro-display";
+	font-size: 16px;
+	line-height: 19px;
+	font-weight: 400;
+	color: #fff;
+}
+
+.container {
+	max-width: 1220px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.title {
+	font-family: "spaceagecyrillic";
+	padding: 100px 0;
+	font-size: 48px;
+	line-height: 48px;
+	font-weight: 400;
+	position: relative; /* от себя */
+	z-index: 2; /* от себя */
+}
+
+.button {
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	font-size: 18px;
+	line-height: 21px;
+	padding: 20px 45px;
+	transition: all 0.5s; /*От себя*/
+}
+
+.button:hover {
+	transform: scale(0.95); /*От себя*/
+}
+
+.header {
+	background-image: url("../images/header-bg.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative; /* от себя */
+}
+
+/* добавила градиент от себя */
+.header::after {
+	content: "";
+	background: url("../images/header-gradient.svg") center/cover no-repeat;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50%; /* на глаз */
+}
+
+.header__inner {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+	position: relative; /* от себя */
+	z-index: 2; /* от себя */
+}
+
+.header__top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 75px 0 30px;
+}
+
+.menu__list {
+	display: flex;
+}
+
+.menu__item {
+	margin-right: 30px;
+}
+
+.menu__link {
+	text-transform: uppercase;
+	font-size: 18px;
+	line-height: 21px;
+	transition: color 0.5s;
+}
+
+.menu__link:hover {
+	color: #cb0e0e;
+}
+
+.phone {
+	font-size: 24px;
+	line-height: 29px;
+	margin-left: auto;
+	transition: color 0.5s; /*От себя*/
+}
+
+.phone:hover {
+	color: #cb0e0e; /*От себя*/
+}
+
+.login {
+	margin-left: 22px;
+	margin-right: 134px;
+	transition: all 0.5s; /*От себя*/
+}
+
+.login:hover {
+	transform: scale(1.2); /*От себя*/
+}
+
+.header__content {
+	max-width: 600px;
+}
+
+.header__title {
+	font-family: "spaceagecyrillic";
+	font-size: 60px;
+	line-height: 60px;
+	font-weight: 400;
+	margin-bottom: 20px; /* на глаз */
+}
+
+.header__title span {
+	font-size: 110px;
+}
+
+.header__text {
+	font-size: 24px;
+	line-height: 29px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+}
+
+.header__text p:not(:last-child) {
+	margin-right: 10px; /* Добавила от себя небольшой отступ безопасности */
+}
+
+.header__btn {
+	font-size: 24px;
+	line-height: 29px;
+	text-transform: uppercase;
+	text-align: center;
+	width: 100%;
+	border: 1px solid #fff;
+	padding: 15px 10px 16px;
+	transition: all 0.5s; /*От себя*/
+}
+
+.header__btn:hover {
+	transform: scale(0.95); /*От себя*/
+}
+
+.header__description {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 40px; /* Вадим взял на глаз */
+	margin-bottom: 5%; /* Вадим взял на глаз */
+}
+
+.header__description-text {
+	width: 165px; /* Нет смысла писать max-width потому что меньше 165px всё равно не будет */
+	font-size: 14px;
+	line-height: 17px;
+}
+
+.header__description-text + .header__description-text {
+	margin-left: 52px;
+}
+
+.about {
+	background-image: url("../images/about-bg.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative; /* от себя */
+}
+
+/* добавила градиент от себя */
+.about::before {
+	content: "";
+	background: url("../images/about-gradient.svg") center/cover no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 20%; /* на глаз */
+}
+
+.about__item {
+	position: relative; /* от себя */
+	z-index: 2; /* от себя */
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-bottom: 150px;
+	gap: 10px; /* от себя, отступ безопасности между картинкой и контентом внутри item*/
+}
+
+.about__item:nth-child(odd) {
+	flex-direction: row-reverse; /* меняет в каждом чётном item картинку с контентом местами */
+}
+
+.about__item:last-child {
+	padding-bottom: 100px; /* от себя исправила */
+}
+
+.about__img {
+	max-width: 100%; /* Чтобы при адаптиве картинка уменьшалась */
+}
+
+.about__content {
+	width: 600px;
+}
+
+.about__content-title {
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.about__content-subtitle {
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: 400;
+	color: #036cca;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+}
+
+.about__content-text {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+
+.about__content-text p {
+	width: 165px;
+}
+
+.about__table {
+	margin-bottom: 50px;
+}
+
+.about__table-caption {
+	caption-side: bottom; /* отправляет надпись над табличкой вниз под табличку */
+	text-align: left;
+	margin-top: 20px;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+.about__table-tr {
+	border: 1px solid #fff;
+	border-left: none;
+	border-right: none;
+}
+
+.about__table-tr + .about__table-tr {
+	font-size: 36px;
+	line-height: 43px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.about__table-td {
+	padding: 10px 30px 10px 0;
+}
+
+.about__table-td span {
+	font-size: 14px;
+	line-height: 17px;
+	display: block;
+}
+
+.how-to {
+	background-image: url("../images/howto-bg.png");
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: cover;
+	padding-bottom: 100px;
+	position: relative; /* от себя */
+}
+
+/* добавила градиент от себя */
+.how-to::after {
+	content: "";
+	background: url("../images/howto-gradient.svg") center/cover no-repeat;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40%; /* на глаз */
+}
+
+.how-to__box {
+	text-align: center;
+	position: relative; /* от себя */
+	z-index: 2; /* от себя */
+}
+
+.how-to__box circle,
+.how-to__box text,
+foreignObject {
+	transition: all 0.5s;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.how-to__box g:hover circle {
+	r: 20px;
+	fill: #036cca;
+}
+
+.how-to__box g:hover text {
+	fill: #036cca;
+	font-size: 22px; /* от себя */
+}
+
+.how-to__box g:hover foreignObject {
+	color: #036cca;
+	font-size: 22px;
+}
+
+foreignObject {
+	text-align: left;
+}
+
+.to-book {
+	background-image: url("../images/tobook-bg.png");
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	min-height: 100vh;
+	position: relative; /* от себя */
+}
+
+/* добавила градиент от себя */
+.to-book::before {
+	content: "";
+	background: url("../images/tobook-gradient.svg") center/cover no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.to-book__inner {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	z-index: 2;
+}
+
+.to-book__text {
+	width: 165px;
+	font-size: 14px;
+	line-height: 17px;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: 52px;
+}
+
+.to-book__text + .to-book__text {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.info {
+	background: url("../images/info-bg.png") top center/cover no-repeat;
+	padding-bottom: 100px;
+	position: relative; /* от себя */
+}
+
+/* добавила градиент от себя */
+.info::after {
+	content: "";
+	background: url("../images/info-gradient.svg") center/cover no-repeat;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40%;
+}
+
+.special-offer__inner {
+	display: flex;
+	justify-content: space-between;
+}
+
+.special-offer__item {
+	width: 500px;
+	text-align: center;
+}
+
+/* добавила от себя */
+.special-offer__item:not(:last-child) {
+	margin-right: 10px;
+}
+
+.special-offer__item-box {
+	border: 1px solid #fff;
+	margin-bottom: 25px;
+	padding: 40px 75px;
+	min-height: 400px; /* min-height чтобы при добавлении контента высота увеличивалась */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.special-offer__item-text {
+	font-size: 24px;
+	line-height: 29px;
+	width: 236px;
+	margin: 0 auto;
+}
+
+.special-offer__item-text span {
+	color: #cb0e0e;
+}
+
+.special-offer__old-price {
+	text-align: right;
+	font-size: 14px;
+	line-height: 17px;
+	margin-bottom: 16px;
+	position: relative;
+}
+
+.special-offer__old-price::before {
+	content: "";
+	position: absolute;
+	width: 68px;
+	height: 1px;
+	background-color: #cb0e0e;
+	top: 7px;
+	right: 0;
+	transform: rotate(20deg);
+}
+
+.special-offer__new-price {
+	font-size: 48px;
+	line-height: 57px;
+}
+
+.special-offer__button {
+	width: 100%;
+}
+
+.services {
+	padding-bottom: 200px;
+}
+
+.services__inner {
+	display: flex;
+	justify-content: space-between;
+}
+
+.services__box-list {
+	width: 620px;
+	margin-right: 80px;
+	font-size: 24px;
+	line-height: 29px;
+}
+
+.services__list-title {
+	margin-bottom: 25px;
+}
+
+.services__list {
+	list-style: none;
+	margin-bottom: 25px;
+}
+
+.services__list-item {
+	padding-left: 36px;
+	position: relative;
+}
+
+.services__list-item::before {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 50%;
+	left: 0;
+	top: 4px; /* на глаз */
+}
+
+.services__description {
+	font-size: 12px;
+	line-height: 14px;
+}
+
+.services__buttons {
+	width: 500px;
+}
+
+.services__btn {
+	width: 100%;
+}
+
+.services__btn:first-child {
+	margin-bottom: 50px;
+	position: relative;
+}
+
+.services__btn:first-child::before {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 41px; /* на глаз */
+	background-image: url("../images/photo.png");
+	width: 192px;
+	height: 150px;
+}
+
+.slider {
+	text-align: center;
+	position: relative;
+	z-index: 2;
+}
+
+.slider__inner {
+	margin-bottom: 50px;
+	border: 1px solid #fff;
+	padding: 100px 0;
+}
+
+.slider__box-img {
+	margin: 0 auto;
+}
+
+.slider__arrow {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	z-index: 5;
+}
+
+.slider__arrow-left {
+	left: 75px;
+}
+
+.slider__arrow-right {
+	right: 75px;
+}
+
+.slider__description {
+	font-family: "spaceagecyrillic";
+	font-size: 24px;
+	line-height: 30px;
+}
+
+.contacts {
+	background-color: #010203;
+	padding-bottom: 100px;
+}
+
+.contacts__inner {
+	display: flex;
+	justify-content: space-between;
+}
+
+.contacts__box {
+	width: 500px;
+	margin-right: 10px; /* от себя */
+}
+
+.contacts__title {
+	padding-bottom: 46px;
+}
+
+.contacts__box-text {
+	max-width: 450px; /* от себя */
+	font-size: 24px;
+	line-height: 29px;
+	margin-bottom: 80px;
+}
+
+.contacts__form-input {
+	background-color: #010203;
+	border: none;
+	border-bottom: 1px solid #fff;
+	margin-bottom: 30px;
+	color: #fff;
+	font-family: 'sf-pro-display';
+	font-size: 14px;
+	line-height: 17px;
+	padding: 20px 0;
+	width: 100%;
+}
+
+.contacts__form-input::placeholder {
+	color: #fff;
+	font-family: 'sf-pro-display';
+	font-size: 14px;
+	line-height: 17px;
+}
+
+.contacts__btn {
+	margin-top: 40px;
+	width: 100%;
+}
+
+.contacts__guarantees {
+	width: 600px;
+}
+
+.contacts__guarantees-text {
+	font-size: 24px;
+	line-height: 29px;
+}
+
+.contacts__guarantees-img {
+	display: flex;
+	margin-left: auto;
+}
+
+.footer {
+	background: url('../images/footer-bg.png') center/cover no-repeat;
+	padding: 100px 0 150px;
+	position: relative; /* от себя */
+}
+
+/* добавила градиент от себя */
+.footer::before {
+	content: "";
+	background: url("../images/footer-top-gradient.svg") center/cover no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+}
+
+/* добавила градиент от себя */
+.footer::after {
+	content: "";
+	background: url("../images/footer-bottom-gradient.svg") center/cover no-repeat;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+}
+
+.footer__inner {
+	display: flex;
+	justify-content: flex-end;
+	position: relative; /* от себя */
+	z-index: 2; /* от себя */
+}
+
+.footer__text {
+	width: 160px; /* от себя */
+	margin-right: 50px;
+}
+
+.footer__text p + p {
+	margin-top: 50px;
+}
+
+.footer__menu {
+	list-style: none;
+	width: 120px; /* на глаз */
+	margin-right: 95px; /* на глаз */
+	display: flex; /* от себя */
+	flex-direction: column; /* от себя */
+	justify-content: space-between; /* от себя */
+}
+
+.footer__links {
+	list-style: none;
+	width: 165px;
+	display: flex; /* от себя */
+	flex-direction: column; /* от себя */
+	justify-content: space-between; /* от себя */
+}
+
+.footer__menu-item,
+.footer__links-item {
+	margin-bottom: 20px;
+}
+
+.footer__menu-item:last-child,
+.footer__links-item:last-child {
+	margin-bottom: unset;
+}
+
+.footer__menu-link,
+.footer__links-link {
+	text-transform: uppercase;
+	transition: color .5s;
+}
+
+.footer__menu-link:hover,
+.footer__links-link:hover {
+	color: #cb0e0e;
+}
