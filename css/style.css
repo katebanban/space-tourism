@@ -52,6 +52,10 @@ body {
 	color: #fff;
 }
 
+.no-scroll {
+	overflow: hidden;
+}
+
 .container {
 	max-width: 1220px;
 	margin-left: auto;
@@ -89,6 +93,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative; /* от себя */
+	overflow: hidden; /* от себя */
 }
 
 /* добавила градиент от себя */
@@ -115,15 +120,70 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 75px 0 30px;
+	padding: 75px 0 60px;
+}
+
+/* от себя */
+.menu:not(:last-child) {
+	margin-right: 30px;
+}
+
+/* от себя */
+.menu__btn {
+	display: none;
+	position: relative;
+	z-index: 30;
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: 40px;
+	height: 30px;
+}
+
+/* от себя */
+.menu__btn::before {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	transition: all 0.5s;
+}
+
+/* от себя */
+.menu__btn::after {
+	content: "";
+	position: absolute;
+	display: block;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	transition: all 0.5s;
+}
+
+/* от себя */
+.menu__btn span {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	transition: all 0.5s;
+	/*transform: translateY(-50%);*/
 }
 
 .menu__list {
 	display: flex;
-}
-
-.menu__item {
-	margin-right: 30px;
+	flex-wrap: wrap; /* от себя */
+	gap: 15px 30px; /* от себя */
 }
 
 .menu__link {
@@ -138,6 +198,7 @@ body {
 }
 
 .phone {
+	flex-shrink: 0; /*От себя*/
 	font-size: 24px;
 	line-height: 29px;
 	margin-left: auto;
@@ -638,7 +699,7 @@ foreignObject {
 	border-bottom: 1px solid #fff;
 	margin-bottom: 30px;
 	color: #fff;
-	font-family: 'sf-pro-display';
+	font-family: "sf-pro-display";
 	font-size: 14px;
 	line-height: 17px;
 	padding: 20px 0;
@@ -647,7 +708,7 @@ foreignObject {
 
 .contacts__form-input::placeholder {
 	color: #fff;
-	font-family: 'sf-pro-display';
+	font-family: "sf-pro-display";
 	font-size: 14px;
 	line-height: 17px;
 }
@@ -672,7 +733,7 @@ foreignObject {
 }
 
 .footer {
-	background: url('../images/footer-bg.png') center/cover no-repeat;
+	background: url("../images/footer-bg.png") center/cover no-repeat;
 	padding: 100px 0 150px;
 	position: relative; /* от себя */
 }
@@ -745,10 +806,142 @@ foreignObject {
 .footer__menu-link,
 .footer__links-link {
 	text-transform: uppercase;
-	transition: color .5s;
+	transition: color 0.5s;
 }
 
 .footer__menu-link:hover,
 .footer__links-link:hover {
 	color: #cb0e0e;
+}
+
+@media (max-width: 1440px) {
+	.login {
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 1024px) {
+	.header__top {
+		padding-top: 30px;
+	}
+
+	.menu {
+		order: 3;
+	}
+
+	.menu:not(:last-child) {
+		margin-right: unset;
+	}
+
+	.menu__list {
+		flex-direction: column;
+		position: absolute;
+		top: 0;
+		right: -120%;
+		align-items: center;
+		padding: 125px 0;
+		width: 100%;
+		background: #010203;
+		height: 100vh; /** ОБЯЗАТЕЛЬНО HEIGHT, А НЕ MIN-HEIGHT, ИНАЧЕ НЕ БУДЕТ СКРОЛЛ ВНИЗ РАБОТАТЬ ПРИ БОЛЬШОМ КОЛ-ВЕ ПУНКТОВ МЕНЮ */
+		flex-wrap: nowrap; /** ОБЯЗАТЕЛЬНО УБРАТЬ WRAP, ИНАЧЕ НЕ БУДЕТ СКРОЛЛ ВНИЗ РАБОТАТЬ ПРИ БОЛЬШОМ КОЛ-ВЕ ПУНКТОВ МЕНЮ */
+		overflow: auto;
+		gap: 30px;
+		transition: right 0.5s;
+	}
+
+	.menu__list--active {
+		right: 0;
+	}
+
+	.menu__btn {
+		display: block;
+	}
+
+	.menu__btn--active span {
+		opacity: 0;
+	}
+
+	.menu__btn--active::before {
+		transform: rotate(45deg);
+		top: 50%;
+	}
+
+	.menu__btn--active::after {
+		transform: rotate(-45deg);
+		top: 50%;
+		bottom: unset;
+	}
+
+	.phone {
+		position: relative;
+		z-index: 30;
+		order: 1;
+		margin-left: unset;
+	}
+
+	.login {
+		position: relative;
+		z-index: 30;
+		order: 2;
+		margin-right: auto;
+	}
+}
+
+@media (max-width: 768px) {
+	.header__content {
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.header__title {
+		font-size: 40px;
+	}
+
+	.header__title span {
+		font-size: 70px;
+	}
+
+	.header__text {
+		justify-content: center;
+	}
+
+	.header__description {
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+
+	.header__description-text + 
+	.header__description-text {
+		margin-left: unset;
+	}
+}
+
+@media (max-width: 425px) {
+	.header__title {
+		font-size: 30px;
+		line-height: 40px;
+	}
+
+	.header__title span {
+		font-size: 55px;
+	}
+
+	.header__btn {
+		font-size: 20px;
+	}
+
+	.header__description-text {
+		width: 100%;
+	}
+}
+
+@media (max-width: 375px) {
+	.phone {
+		font-size: 20px;
+	}
+
+	.login {
+		margin-left: 10px;
+	}
 }
