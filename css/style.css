@@ -304,9 +304,9 @@ body {
 	z-index: 2; /* от себя */
 	display: flex;
 	justify-content: space-between;
-	flex-wrap: wrap;
+	/*flex-wrap: wrap;*/
 	padding-bottom: 150px;
-	gap: 10px; /* от себя, отступ безопасности между картинкой и контентом внутри item*/
+	gap: 30px; /* от себя, отступ безопасности между картинкой и контентом внутри item*/
 }
 
 .about__item:nth-child(odd) {
@@ -814,13 +814,26 @@ foreignObject {
 	color: #cb0e0e;
 }
 
+/** ------- МЕДИА-ЗАПРОСЫ ---------- */
+
 @media (max-width: 1440px) {
 	.login {
 		margin-right: 0;
 	}
 }
 
+@media (max-width: 1200px) {
+	.about__item {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
 @media (max-width: 1024px) {
+	.title {
+		padding: 60px 0;
+	}
+
 	.header__top {
 		padding-top: 30px;
 	}
@@ -885,9 +898,27 @@ foreignObject {
 		order: 2;
 		margin-right: auto;
 	}
+
+	.about__item {
+		padding-bottom: 60px;
+	}
+
+	.about__item:last-child {
+		padding-bottom: 60px;
+	}
 }
 
 @media (max-width: 768px) {
+	.title {
+		text-align: center;
+		font-size: 40px;
+		line-height: 40px;
+	}
+
+	.header {
+		background-position: top right;
+	}
+
 	.header__content {
 		margin: 0 auto;
 		text-align: center;
@@ -911,13 +942,70 @@ foreignObject {
 		gap: 30px;
 	}
 
-	.header__description-text + 
-	.header__description-text {
+	.header__description-text + .header__description-text {
 		margin-left: unset;
+	}
+
+	.about__content-title {
+		text-align: center;
+	}
+
+	.about__content-subtitle {
+		text-align: center;
+	}
+
+	.about__content-text {
+		flex-wrap: wrap;
+		gap: 30px;
+		justify-content: center;
+	}
+
+	.about__table {
+		width: 100%;
+	}
+
+	.about__table-tr:first-child {
+		display: none;
+	}
+
+	.about__table-tr + .about__table-tr {
+		font-size: 20px;
+		line-height: 22px;
+		font-weight: 400;
+	}
+
+	.about__table-td {
+		display: block;
+		text-align: right;
+		border-bottom: 1px solid #fff;
+	}
+
+	.about__table-td span {
+		display: inline-block;
+	}
+
+	.about__table-td::before {
+		content: attr(aria-label);
+		float: left;
+	}
+
+	.about__table-td:last-child {
+		border: none;
+	}
+
+	.about__button {
+		display: block;
+		margin: 0 auto;
 	}
 }
 
 @media (max-width: 425px) {
+	.title {
+		padding: 50px 0;
+		font-size: 30px;
+		line-height: 30px;
+	}
+
 	.header__title {
 		font-size: 30px;
 		line-height: 40px;
@@ -931,8 +1019,42 @@ foreignObject {
 		font-size: 20px;
 	}
 
+	.header__description {
+		gap: 15px;
+	}
+
 	.header__description-text {
 		width: 100%;
+	}
+
+	.about__item {
+		padding-bottom: 50px;
+	}
+
+	.about__item:last-child {
+		padding-bottom: 50px;
+	}
+
+	.about__content-title {
+		font-size: 25px;
+		line-height: 30px;
+	}
+
+	.about__content-text {
+		display: block;
+	}
+
+	.about__content-text p {
+		width: 100%;
+	}
+
+	.about__content-text p:not(:last-child) {
+		margin-bottom: 15px;
+	}
+
+	.about__button {
+		width: 100%;
+		padding: 20px 40px;
 	}
 }
 
