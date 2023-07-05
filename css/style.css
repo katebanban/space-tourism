@@ -1012,6 +1012,26 @@ foreignObject {
 		display: block;
 		margin: 0 auto;
 	}
+
+	.how-to__box svg g text, 
+	.how-to__box svg g foreignObject {
+		font-size: 22px;
+	}
+
+	.how-to__box g:hover circle {
+		r: 10px;
+		fill: #036cca;
+	}
+
+	.how-to__box g:hover text {
+		fill: #036cca;
+		font-size: 22px;
+	}
+	
+	.how-to__box g:hover foreignObject {
+		color: #036cca;
+		font-size: 22px;
+	}
 }
 
 @media (max-width: 425px) {
@@ -1074,6 +1094,27 @@ foreignObject {
 
 	.how-to {
 		padding-bottom: 50px;
+	}
+
+	.how-to__box svg g text, 
+	.how-to__box svg g foreignObject {
+		font-size: 30px;
+	}
+
+	.how-to__box svg g foreignObject {
+		width: 270px; /* на глаз */
+		height: 185px; /* на глаз */
+		line-height: 30px; /* на глаз */
+	}
+
+	.how-to__box g:hover text {
+		fill: #036cca;
+		font-size: 30px;
+	}
+	
+	.how-to__box g:hover foreignObject {
+		color: #036cca;
+		font-size: 30px;
 	}
 }
 
