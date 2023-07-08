@@ -462,6 +462,7 @@ foreignObject {
 .to-book__inner {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 50px;
 	position: relative;
 	z-index: 2;
 }
