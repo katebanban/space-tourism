@@ -7,11 +7,21 @@ $(function(){
 
 const menuBtn = document.querySelector('.menu__btn');
 const menuList = document.querySelector('.menu__list');
+const allMenuLinks = document.querySelectorAll('.menu__link');
 
 menuBtn.addEventListener('click', function () {
 	menuList.classList.toggle('menu__list--active');
 	menuBtn.classList.toggle('menu__btn--active');
 	document.querySelector('body').classList.toggle('no-scroll');
+});
+
+// Как вырубить меню (и вернуть скролл) после нажатия на один из пунктов этого меню
+allMenuLinks.forEach((link) => {
+	link.addEventListener('click', function () {
+		menuList.classList.remove('menu__list--active');
+		menuBtn.classList.remove('menu__btn--active');
+		document.querySelector('body').classList.remove('no-scroll');
+	});
 });
 
 let foreighObject = document.querySelectorAll('foreignObject');
@@ -47,7 +57,6 @@ function myFunction(screen) {
 	}
 }
 
-let myMediaWidth = window.matchMedia("(max-width: 425px)")
-myFunction(myMediaWidth) // Вызов функции прослушивателя во время выполнения
-myMediaWidth.addListener(myFunction) // Присоединить функцию прослушивателя при изменении состояния
-
+let myMediaWidth = window.matchMedia("(max-width: 425px)");
+myFunction(myMediaWidth); // Вызов функции прослушивателя во время выполнения
+myMediaWidth.addListener(myFunction); // Присоединить функцию прослушивателя при изменении состояния
