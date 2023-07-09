@@ -826,6 +826,10 @@ foreignObject {
 	.info::after {
 		content: none;
 	}
+
+	.services {
+		padding-bottom: 100px;
+	}
 }
 
 @media (max-width: 1200px) {
@@ -950,6 +954,18 @@ foreignObject {
 
 	.special-offer__item-box {
 		padding: 40px 60px;
+	}
+
+	.services {
+		padding-bottom: 60px;
+	}
+
+	.services__buttons {
+		align-self: center;
+	}
+
+	.services__btn {
+		padding: 20px 24px;
 	}
 }
 
@@ -1088,6 +1104,20 @@ foreignObject {
 	.special-offer__item-box {
 		min-height: 350px;
 	}
+
+	.services__title {
+		font-size: 32px;
+	}
+
+	.services__inner {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.services__box-list {
+		margin-right: unset;
+		margin-bottom: 150px;
+	}
 }
 
 @media (max-width: 425px) {
@@ -1196,6 +1226,14 @@ foreignObject {
 
 	.special-offer__button {
 		padding: 20px 40px;
+	}
+
+	.services {
+		padding-bottom: 50px;
+	}
+
+	.services__title {
+		font-size: 24px;
 	}
 }
 
