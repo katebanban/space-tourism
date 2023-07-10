@@ -564,6 +564,8 @@ foreignObject {
 
 .services {
 	padding-bottom: 200px;
+	position: relative; /* от себя */
+	z-index: 2; /* от себя */
 }
 
 .services__inner {
@@ -645,6 +647,7 @@ foreignObject {
 
 .slider__box-img {
 	margin: 0 auto;
+	max-width: 100%; /* От себя */
 }
 
 .slider__arrow {
@@ -822,11 +825,6 @@ foreignObject {
 		margin-right: 0;
 	}
 
-	/*! ВРЕМЕННО! */
-	.info::after {
-		content: none;
-	}
-
 	.services {
 		padding-bottom: 100px;
 	}
@@ -836,6 +834,22 @@ foreignObject {
 	.about__item {
 		flex-wrap: wrap;
 		justify-content: center;
+	}
+
+	.slider__inner {
+		padding: 100px 30px;
+	}
+
+	.slider__arrow {
+		top: 110%;
+	}
+
+	.slider__arrow-left {
+		left: 0;
+	}
+
+	.slider__arrow-right {
+		right: 0;
 	}
 }
 
@@ -966,6 +980,22 @@ foreignObject {
 
 	.services__btn {
 		padding: 20px 24px;
+	}
+	
+	.slider__inner {
+		padding: 50px 30px;
+	}
+
+	.slider__box {
+		margin: 0 -15px;
+	}
+
+	.slider__box-item {
+		margin: 0 15px;
+	}
+
+	.slider__arrow {
+		top: 105%;
 	}
 }
 
@@ -1234,6 +1264,18 @@ foreignObject {
 
 	.services__title {
 		font-size: 24px;
+	}
+
+	.slider__inner {
+		padding: 30px 15px;
+	}
+
+	.slider__arrow-right {
+		right: 15px;
+	}
+
+	.slider__arrow-left {
+		left: 15px;
 	}
 }
 
