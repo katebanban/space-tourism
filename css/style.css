@@ -683,7 +683,7 @@ foreignObject {
 
 .contacts__box {
 	width: 500px;
-	margin-right: 10px; /* от себя */
+	margin-right: 50px; /* от себя */
 }
 
 .contacts__title {
@@ -997,6 +997,41 @@ foreignObject {
 	.slider__arrow {
 		top: 105%;
 	}
+
+	.contacts {
+		padding-bottom: 60px;
+	}
+
+	.contacts__inner {
+		flex-wrap: wrap;
+	}
+
+	.contacts__box {
+		width: 100%;
+		margin-right: unset;
+	}
+
+	.contacts__box-text {
+		min-width: 100%;
+	}
+
+	.contacts__btn {
+		width: unset;
+	}
+
+	.contacts__guarantees {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.contacts__guarantees-text {
+		flex: 0 1 45%;
+	}
+
+	.contacts__title {
+		flex: 0 1 100%;
+	}
 }
 
 @media (max-width: 768px) {
@@ -1148,6 +1183,28 @@ foreignObject {
 		margin-right: unset;
 		margin-bottom: 150px;
 	}
+
+	.contacts__box-text {
+		margin-bottom: 40px;
+	}
+
+	.contacts__form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.contacts__btn {
+		align-self: center;
+	}
+
+	.contacts__guarantees-text {
+		flex: 0 1 100%;
+		text-align: center;
+	}
+
+	.contacts__guarantees-img {
+		margin: 30px auto 0;
+	}
 }
 
 @media (max-width: 425px) {
@@ -1276,6 +1333,23 @@ foreignObject {
 
 	.slider__arrow-left {
 		left: 15px;
+	}
+
+	.slider__description {
+		font-size: 20px;
+	}
+
+	.contacts {
+		padding-bottom: 50px;
+	}
+
+	.contacts__btn {
+		width: 100%;
+		padding: 20px 40px;
+	}
+
+	.contacts__guarantees-img {
+		max-width: 100%;
 	}
 }
 
