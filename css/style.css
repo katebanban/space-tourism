@@ -299,6 +299,17 @@ body {
 	height: 20%; /* на глаз */
 }
 
+/* добавила градиент от себя */
+.about::after {
+	content: "";
+	background: url("../images/about-gradient-bottom.svg") center/cover no-repeat;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 20%; /* на глаз */
+}
+
 .about__item {
 	position: relative; /* от себя */
 	z-index: 2; /* от себя */
@@ -396,6 +407,17 @@ body {
 }
 
 /* добавила градиент от себя */
+.how-to::before {
+	content: "";
+	background: url("../images/howto-gradient-top.svg") center/cover no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40%; /* на глаз */
+}
+
+/* добавила градиент от себя */
 .how-to::after {
 	content: "";
 	background: url("../images/howto-gradient.svg") center/cover no-repeat;
@@ -459,6 +481,17 @@ foreignObject {
 	height: 100%;
 }
 
+/* добавила градиент от себя */
+.to-book::after {
+	content: "";
+	background: url("../images/tobook-gradient-bottom.svg") center/cover no-repeat;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+}
+
 .to-book__inner {
 	display: flex;
 	justify-content: space-between;
@@ -488,6 +521,17 @@ foreignObject {
 }
 
 /* добавила градиент от себя */
+.info::before {
+	content: "";
+	background: url("../images/info-gradient-top.svg") center/cover no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40%;
+}
+
+/* добавила градиент от себя */
 .info::after {
 	content: "";
 	background: url("../images/info-gradient.svg") center/cover no-repeat;
@@ -496,6 +540,12 @@ foreignObject {
 	left: 0;
 	width: 100%;
 	height: 40%;
+}
+
+/* От себя */
+.special-offer {
+	position: relative;
+	z-index: 2;
 }
 
 .special-offer__inner {
