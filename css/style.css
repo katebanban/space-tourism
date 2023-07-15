@@ -1032,6 +1032,10 @@ foreignObject {
 	.contacts__title {
 		flex: 0 1 100%;
 	}
+
+	.footer {
+		padding: 60px 0;
+	}
 }
 
 @media (max-width: 768px) {
@@ -1205,6 +1209,25 @@ foreignObject {
 	.contacts__guarantees-img {
 		margin: 30px auto 0;
 	}
+
+	.footer__inner {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.footer__text {
+		width: 100%;
+		margin: 0 0 40px 0;
+		text-align: center;
+	}
+
+	.footer__text p + p {
+		margin-top: 20px;
+	}
+
+	.footer__menu {
+		margin-right: 70px;
+	}
 }
 
 @media (max-width: 425px) {
@@ -1350,6 +1373,22 @@ foreignObject {
 
 	.contacts__guarantees-img {
 		max-width: 100%;
+	}
+
+	.footer__menu {
+		margin-right: unset;
+		width: 100%;
+		align-items: center;
+		margin-bottom: 40px;
+	}
+
+	.footer__links {
+		width: 100%;
+		align-items: center;
+	}
+
+	.footer {
+		padding: 50px 0;
 	}
 }
 
